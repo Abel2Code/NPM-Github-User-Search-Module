@@ -5,8 +5,8 @@ const
 async function projects(username, token=null) {
   const response = await github_project_search.getProjects(username)
     // If we get a valid response
-    if(typeof response == 'string') {
-      const projects = JSON.parse(response);
+    if(response.constructor === Array) {
+      const projects = response;
       const selection = await selectProject(projects);
       project(selection.Project, token);
 
@@ -14,7 +14,7 @@ async function projects(username, token=null) {
     } else {
       const error = JSON.parse(response.text).message;
       if(error == 'Not Found') {
-        console.log('ERROR: Invalid User. Please try again.');
+        console.log('ERROR: Invalid Username.');
       } else {
         console.log(`ERROR: ${error}`);
       }
@@ -40,8 +40,8 @@ async function project(projectId, token=null) {
   }
 
   const response = await github_project_search.getProject(projectId, token)
-  if(typeof response == 'string'){
-    const project = JSON.parse(response);
+  if(response.text == null){
+    const project = response;
     const out = `You Selected:
     ${project.name}${project.body ? `\n\tDescribed as ${project.body}` : ''}
     \tAccess at ${project.url}
