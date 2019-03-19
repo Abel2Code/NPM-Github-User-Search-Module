@@ -28,6 +28,5 @@ const flags = yargs.usage('$0: Usage <cmd> [args]')
       },
       handler: (argv) => { app.project(argv.projectId, argv.token) }
     })
-
     .help('help')
     .argv

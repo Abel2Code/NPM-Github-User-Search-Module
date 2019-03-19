@@ -1,7 +1,7 @@
 {
   "name": "github-project-search",
   "version": "1.0.0",
-  "description": "Github-based module for searching user's projects.",
+  "description": "Github-based module for searching a user's projects.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

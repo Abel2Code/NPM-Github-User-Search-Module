@@ -37,14 +37,11 @@ async function project(projectId, token=null) {
   if(token == '' || token == null) {
       const tokenRequest = await requestToken();
       token = tokenRequest.token;
-  } else {
-    console.log(token);
   }
 
   const response = await github_project_search.getProject(projectId, token)
   if(typeof response == 'string'){
     const project = JSON.parse(response);
-    // console.log(project);
     const out = `You Selected:
     ${project.name}${project.body ? `\n\tDescribed as ${project.body}` : ''}
     \tAccess at ${project.url}
