@@ -5,7 +5,7 @@ const
 
 const flags = yargs.usage('$0: Usage <cmd> [args]')
     .command({
-        command: 'projects <username>',
+        command: 'search <username>',
         desc: 'get all projects from the username entered',
         builder: (yargs) => {
             return yargs.option('t', {
@@ -17,7 +17,7 @@ const flags = yargs.usage('$0: Usage <cmd> [args]')
         handler: (argv) => { app.projects(argv.username, argv.token) }
     })
     .command({
-      command: 'search <projectId>',
+      command: 'myProject <projectId>',
       desc: 'search for a project using its id',
       builder: (yargs) => {
           return yargs.option('t', {

@@ -7,8 +7,12 @@ async function projects(username, token=null) {
     // If we get a valid response
     if(response.constructor === Array) {
       const projects = response;
-      const selection = await selectProject(projects);
-      project(selection.Project, token);
+      if(projects.length == 0) {
+        console.log(`ERROR: ${username} has no projects`);
+      } else {
+        const selection = await selectProject(projects);
+        project(selection.Project, token);
+      }
 
     // If we do not get a valid response
     } else {
