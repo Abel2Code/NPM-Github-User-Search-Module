@@ -1,0 +1,15 @@
+{
+  "name": "github-project-cli",
+  "version": "1.0.0",
+  "description": "Access your Projects through a CLI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abel Salinas",
+  "license": "MIT",
+  "dependencies": {
+    "github-project-search": "file:../github-project-search",
+    "inquirer": "^6.2.2"
+  }
+}

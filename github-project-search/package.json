@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Abel2Code/NPM-Github-User-Search-Module/issues"
   },
-  "homepage": "https://github.com/Abel2Code/NPM-Github-User-Search-Module#readme"
+  "homepage": "https://github.com/Abel2Code/NPM-Github-User-Search-Module#readme",
+  "dependencies": {
+    "superagent": "^4.1.0"
+  }
 }

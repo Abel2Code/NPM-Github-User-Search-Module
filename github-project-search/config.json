@@ -1,0 +1,6 @@
+{
+	"url": "https://api.github.com",
+	"mandatoryHeaders": {
+		"Accept": "application/vnd.github.inertia-preview+json"
+	}
+}
